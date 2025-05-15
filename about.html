@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | CYSKY</title>
+  <link rel="icon" type="image/png" href="https://www.svgrepo.com/show/448266/security-shield.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans selection:bg-cyan-400 selection:text-slate-900">
+
+  <!-- Navbar (reuse from index.html) -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-slate-900 shadow-lg">
+    <nav class="container mx-auto flex justify-between items-center px-6 py-4">
+      <a href="index.html" class="flex items-center text-cyan-400 font-extrabold text-2xl">
+        <img src="https://api.iconify.design/mdi/shield-search.svg?color=cyan&width=32" class="inline mr-2" alt="logo" />
+        CYSKY
+      </a>
+      <ul class="hidden md:flex space-x-8 font-semibold text-slate-300">
+        <li><a href="index.html" class="hover:text-cyan-400 transition">Home</a></li>
+        <li><a href="about.html" class="hover:text-cyan-400 transition text-cyan-400 font-bold">About</a></li>
+        <li><a href="index.html#services" class="hover:text-cyan-400 transition">Services</a></li>
+        <li><a href="index.html#contact" class="hover:text-cyan-400 transition">Contact</a></li>
+      </ul>
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-slate-800 text-slate-300">
+      <ul class="flex flex-col space-y-4 p-4 font-semibold">
+        <li><a href="index.html" class="block hover:text-cyan-400 transition">Home</a></li>
+        <li><a href="about.html" class="block hover:text-cyan-400 transition text-cyan-400 font-bold">About</a></li>
+        <li><a href="index.html#services" class="block hover:text-cyan-400 transition">Services</a></li>
+        <li><a href="index.html#contact" class="block hover:text-cyan-400 transition">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-28 max-w-5xl mx-auto px-6 text-slate-300">
+    <h1 class="text-5xl font-bold mb-6 text-center text-slate-100">About CYSKY</h1>
+    <p class="mb-8 text-lg leading-relaxed text-center max-w-3xl mx-auto">
+      CYSKY is a cutting-edge offensive security research group specializing in identifying vulnerabilities in web and cloud applications. We emphasize thorough manual testing, responsible disclosure, and continuous improvement for our clients.
+    </p>
+
+    <div class="flex flex-col md:flex-row items-center gap-12">
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="Team working" class="rounded-lg shadow-lg max-w-md" />
+      <div>
+        <h2 class="text-3xl font-semibold mb-4">Our Mission</h2>
+        <p class="mb-6 leading-relaxed">
+          To provide startups and SaaS businesses with unparalleled security insights, combining automated and manual methods, and helping them defend their digital assets.
+        </p>
+        <h2 class="text-3xl font-semibold mb-4">Why Choose Us?</h2>
+        <ul class="list-disc list-inside space-y-2 text-slate-300">
+          <li>Experienced security researchers with deep industry knowledge.</li>
+          <li>Proven track record on Bug Bounty platforms and real-world projects.</li>
+          <li>Dedicated to responsible disclosure and client success.</li>
+          <li>Fast response times and detailed actionable reports.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Navbar mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
