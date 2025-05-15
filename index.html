@@ -1,99 +1,203 @@
-<!-- Hall of Fame Section -->
-<section id="hall-of-fame" class="py-12 bg-gradient-to-r from-cyan-900 via-cyan-800 to-cyan-900 text-white">
-  <div class="container mx-auto px-4">
-    <h2 class="text-4xl font-bold mb-8 text-center">Hall of Fame</h2>
-    <div class="overflow-hidden relative">
-      <div class="flex animate-marquee space-x-12">
-        <!-- Repeat logos here -->
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/spacex.com" alt="SpaceX" class="h-16 object-contain"/>
-          <span class="text-sm">SpaceX</span>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CYSKY - Bug Bounty & Pentesting Team</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    .animate-marquee {
+      display: flex;
+      animation: marquee 30s linear infinite;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body class="bg-cyan-900 text-white font-sans">
+
+  <!-- Navbar -->
+  <nav class="fixed w-full bg-cyan-900 bg-opacity-90 backdrop-blur-md shadow-md z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#hero" class="text-2xl font-bold tracking-wide hover:text-cyan-300 transition">CYSKY</a>
+      <ul class="hidden md:flex space-x-8 font-semibold">
+        <li><a href="#services" class="hover:text-cyan-300 transition">Services</a></li>
+        <li><a href="#hall-of-fame" class="hover:text-cyan-300 transition">Hall of Fame</a></li>
+        <li><a href="#about" class="hover:text-cyan-300 transition">About</a></li>
+        <li><a href="#contact" class="hover:text-cyan-300 transition">Contact</a></li>
+      </ul>
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+        </svg>
+      </button>
+    </div>
+    <div id="menu" class="hidden md:hidden bg-cyan-900 px-6 pb-4 space-y-4">
+      <a href="#services" class="block hover:text-cyan-300 transition">Services</a>
+      <a href="#hall-of-fame" class="block hover:text-cyan-300 transition">Hall of Fame</a>
+      <a href="#about" class="block hover:text-cyan-300 transition">About</a>
+      <a href="#contact" class="block hover:text-cyan-300 transition">Contact</a>
+    </div>
+  </nav>
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4" data-aos="fade-up">
+    <h1 class="text-5xl font-extrabold mb-4">Welcome to <span class="text-cyan-400">CYSKY</span></h1>
+    <p class="text-lg max-w-xl mb-8">Your trusted Bug Bounty & Pentesting team. Hunting bugs & securing the future, one report at a time.</p>
+    <a href="#contact" class="px-8 py-3 bg-cyan-500 hover:bg-cyan-600 rounded text-white font-semibold transition">Get in Touch</a>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-12 bg-cyan-800 bg-opacity-90" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-8 text-center">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-cyan-700 rounded-lg p-6 shadow-lg hover:shadow-cyan-500 transition">
+          <h3 class="text-2xl font-semibold mb-4">Bug Bounty Hunting</h3>
+          <p>We find critical vulnerabilities in new and existing platforms to help you stay secure.</p>
         </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/grammarly.com" alt="Grammarly" class="h-16 object-contain"/>
-          <span class="text-sm">Grammarly</span>
+        <div class="bg-cyan-700 rounded-lg p-6 shadow-lg hover:shadow-cyan-500 transition">
+          <h3 class="text-2xl font-semibold mb-4">Pentesting</h3>
+          <p>Comprehensive security assessments to identify weaknesses before attackers do.</p>
         </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/vodafone.com" alt="Vodafone" class="h-16 object-contain"/>
-          <span class="text-sm">Vodafone</span>
-        </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/mozilla.org" alt="Mozilla" class="h-16 object-contain"/>
-          <span class="text-sm">Mozilla</span>
-        </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/dell.com" alt="Dell" class="h-16 object-contain"/>
-          <span class="text-sm">Dell</span>
-        </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/sap.com" alt="SAP" class="h-16 object-contain"/>
-          <span class="text-sm">SAP</span>
-        </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/indeed.com" alt="Indeed" class="h-16 object-contain"/>
-          <span class="text-sm">Indeed</span>
-        </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/nasa.gov" alt="NASA" class="h-16 object-contain"/>
-          <span class="text-sm">NASA</span>
-        </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/canva.com" alt="Canva" class="h-16 object-contain"/>
-          <span class="text-sm">Canva</span>
-        </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/incomm.com" alt="InComm" class="h-16 object-contain"/>
-          <span class="text-sm">InComm</span>
-        </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/comcast.com" alt="Comcast" class="h-16 object-contain"/>
-          <span class="text-sm">Comcast</span>
-        </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/tiktok.com" alt="TikTok" class="h-16 object-contain"/>
-          <span class="text-sm">TikTok</span>
-        </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/cloudflare.com" alt="Cloudflare" class="h-16 object-contain"/>
-          <span class="text-sm">Cloudflare</span>
-        </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/bolt.eu" alt="Bolt" class="h-16 object-contain"/>
-          <span class="text-sm">Bolt</span>
-        </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/kucoin.com" alt="KuCoin" class="h-16 object-contain"/>
-          <span class="text-sm">KuCoin</span>
-        </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/planethoster.com" alt="PlanetHosterInc" class="h-16 object-contain"/>
-          <span class="text-sm">PlanetHosterInc</span>
-        </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/immutable.com" alt="Immutable" class="h-16 object-contain"/>
-          <span class="text-sm">Immutable</span>
-        </div>
-        <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
-          <img src="https://logo.clearbit.com/underarmour.com" alt="Under Armour" class="h-16 object-contain"/>
-          <span class="text-sm">Under Armour</span>
+        <div class="bg-cyan-700 rounded-lg p-6 shadow-lg hover:shadow-cyan-500 transition">
+          <h3 class="text-2xl font-semibold mb-4">Security Consulting</h3>
+          <p>Expert advice and strategies tailored to your company’s security needs.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<style>
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-.animate-marquee {
-  display: flex;
-  animation: marquee 30s linear infinite;
-  white-space: nowrap;
-}
-</style>
+  <!-- Hall of Fame Section -->
+  <section id="hall-of-fame" class="py-12 bg-gradient-to-r from-cyan-900 via-cyan-800 to-cyan-900 text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-8 text-center">Hall of Fame</h2>
+      <div class="overflow-hidden relative">
+        <div class="flex animate-marquee space-x-12">
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/spacex.com" alt="SpaceX" class="h-16 object-contain"/>
+            <span class="text-sm">SpaceX</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/grammarly.com" alt="Grammarly" class="h-16 object-contain"/>
+            <span class="text-sm">Grammarly</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/vodafone.com" alt="Vodafone" class="h-16 object-contain"/>
+            <span class="text-sm">Vodafone</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/mozilla.org" alt="Mozilla" class="h-16 object-contain"/>
+            <span class="text-sm">Mozilla</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/dell.com" alt="Dell" class="h-16 object-contain"/>
+            <span class="text-sm">Dell</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/sap.com" alt="SAP" class="h-16 object-contain"/>
+            <span class="text-sm">SAP</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/indeed.com" alt="Indeed" class="h-16 object-contain"/>
+            <span class="text-sm">Indeed</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/nasa.gov" alt="NASA" class="h-16 object-contain"/>
+            <span class="text-sm">NASA</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/canva.com" alt="Canva" class="h-16 object-contain"/>
+            <span class="text-sm">Canva</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/incomm.com" alt="InComm" class="h-16 object-contain"/>
+            <span class="text-sm">InComm</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/comcast.com" alt="Comcast" class="h-16 object-contain"/>
+            <span class="text-sm">Comcast</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/tiktok.com" alt="TikTok" class="h-16 object-contain"/>
+            <span class="text-sm">TikTok</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/cloudflare.com" alt="Cloudflare" class="h-16 object-contain"/>
+            <span class="text-sm">Cloudflare</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/bolt.eu" alt="Bolt" class="h-16 object-contain"/>
+            <span class="text-sm">Bolt</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/kucoin.com" alt="KuCoin" class="h-16 object-contain"/>
+            <span class="text-sm">KuCoin</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/planethoster.com" alt="PlanetHosterInc" class="h-16 object-contain"/>
+            <span class="text-sm">PlanetHosterInc</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/immutable.com" alt="Immutable" class="h-16 object-contain"/>
+            <span class="text-sm">Immutable</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300">
+            <img src="https://logo.clearbit.com/underarmour.com" alt="Under Armour" class="h-16 object-contain"/>
+            <span class="text-sm">Under Armour</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-12 bg-cyan-800 bg-opacity-90" data-aos="fade-up">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-4xl font-bold mb-8 text-center">About Us</h2>
+      <div class="flex flex-col md:flex-row items-center md:space-x-8">
+        <img src="https://avatars.githubusercontent.com/u/48142389?v=4" alt="cysky0x1" class="rounded-full w-48 h-48 mb-6 md:mb-0" />
+        <div class="text-center md:text-left">
+          <p class="mb-4">
+            We are a dedicated Bug Bounty and Pentesting team led by <strong>cysky0x1</strong>, passionate about discovering security vulnerabilities and helping companies protect their digital assets.
+          </p>
+          <p>
+            Our expertise spans web applications, APIs, blockchain projects, and more. We pride ourselves on detailed reporting and responsible disclosure.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-12 bg-cyan-900 bg-opacity-95" data-aos="fade-up">
+    <div class="container mx-auto px-4 max-w-xl text-center">
+      <h2 class="text-4xl font-bold mb-8">Contact Us</h2>
+      <p class="mb-6">Want to collaborate or need security help? Reach out!</p>
+      <a href="mailto:cysky0x1@example.com" class="inline-block px-8 py-3 bg-cyan-500 rounded hover:bg-cyan-600 transition text-white font-semibold">Send Email</a>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+</html>
